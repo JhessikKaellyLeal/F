@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup as bs
-import requests,sys
+import requests,sys,os
 
 if(len(sys.argv) > 1):
     if("-i" in sys.argv):
@@ -23,6 +23,17 @@ try:
             print(cont[c])
         except:
             pass
+    l = [cont[11],cont[12]]
+    la = (l[0].split(":"))[1]
+    lo = (l[1].split(":"))[1]
+    desj = str(input("\nVocê deseja ver essas coordenadas no google maps Y para sim e N para não: "))
+    if(desj == ("y" or "Y")):
+        os.system("start https://www.google.com.br/maps/@{},{},191m/data=!3m1!1e3?hl=pt-BR".format(la,lo))
+    elif(desj == ("n" or "N")):
+        exit()
+    else:
+        pass
 
 except:
     pass
+
