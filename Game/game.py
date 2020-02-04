@@ -1,5 +1,5 @@
 from tkinter import *
-import threading,random,time,playsound
+import threading,random,time
 
 Xb = random.choice(range(0,250))
 Yb = 450
@@ -161,6 +161,5 @@ game = threading.Thread(target=Game,name="Game",daemon=True)
 game.start()
 mov = threading.Thread(target=Mov,name="mov")
 mov.start()
-sound = threading.Thread(target=playsound.playsound("1.mp3"),name="sound")
-sound.start()
+
 
