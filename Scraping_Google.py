@@ -1,5 +1,5 @@
-from bs4 import BeautifulSoup as bs
 import requests,time
+from bs4 import BeautifulSoup as bs
 
 pesquisa = str(input("[Digite a pesquisa:] }===> "))
 url = "https://www.google.com/search?q={}".format(pesquisa)
