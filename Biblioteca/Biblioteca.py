@@ -2,7 +2,7 @@ from tkinter import *
 import os
 
 def Exit():
-    os.system("taskkill /im Biblioteca.exe /t /f")
+    exit()
 
 def cad():
     global caix1,caix2,caix3,caix4,caix5,caix6
