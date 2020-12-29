@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup as bs
-import requests,os,webbrowser
+import requests,os
 
 url = "https://animestorrent.com/?s="
 url2 = "https://animestorrent.com/category/lancamento/"
