@@ -46,6 +46,12 @@ def dow(url):
             n = n + 1
     else:
         pass
+    
+    if(len(l) == 0):
+        print(" \x1b[0;91m[!] \x1b[0;97mAnime não disponivel para download \x1b[0;91m[!]\x1b[0;37m")
+        exit()
+    else:
+        pass
     print("")
     num = int(input("\x1b[0;97m Digite o numero da resolução a baixar: \x1b[0;37m"))
     if(num < len(l)):
