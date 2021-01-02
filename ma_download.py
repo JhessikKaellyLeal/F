@@ -78,39 +78,43 @@ def pg2(ur):
         pass
 
 def pg1():
-    nome = str(input("\x1b[0;97m Digite o nome do anime: \x1b[0;37m"))
-    pgs = bs(requests.get(f"{url1+nome}").text,"html.parser")
-    cont = pgs.find_all("div",{"class":"post-outer col-sm-3 col-xs-6"})
-    cont1 = (pgs.find_all("div",{"class":"pagination-num"}))[0]
-    n = cont1.find_all("a")
-    a = []
-    for al in n:
-        a.append((str(al).split('"'))[3])
+    try:
+        nome = str(input("\x1b[0;97m Digite o nome do anime: \x1b[0;37m"))
+        pgs = bs(requests.get(f"{url1+nome}").text,"html.parser")
+        cont = pgs.find_all("div",{"class":"post-outer col-sm-3 col-xs-6"})
+        cont1 = (pgs.find_all("div",{"class":"pagination-num"}))[0]
+        n = cont1.find_all("a")
+        a = []
+        for al in n:
+            a.append((str(al).split('"'))[3])
 
-    for pgst in range(0,len(a)):
-        pgs = bs(requests.get(a[pgst]).text,"html.parser")
-        cont0 = pgs.find_all("div",{"class":"post-outer col-sm-3 col-xs-6"})
-        cont = cont + cont0
+        for pgst in range(0,len(a)):
+            pgs = bs(requests.get(a[pgst]).text,"html.parser")
+            cont0 = pgs.find_all("div",{"class":"post-outer col-sm-3 col-xs-6"})
+            cont = cont + cont0
 
-    l = []
-    num = 0
-    for c in cont:
-        name = c.text
-        l.append((str((c.find_all("a",{"class":"post-title-link"})[0])).split('"'))[3])
-        print(f"\x1b[0;91m [{num}] \x1b[0;93m]---> \x1b[0;97m{name}\x1b[0;37m")
-        num = num + 1
-        try:
-            l.remove("bookmark")
-        except:
+        l = []
+        num = 0
+        for c in cont:
+            name = c.text
+            l.append((str((c.find_all("a",{"class":"post-title-link"})[0])).split('"'))[3])
+            print(f"\x1b[0;91m [{num}] \x1b[0;93m]---> \x1b[0;97m{name}\x1b[0;37m")
+            num = num + 1
+            try:
+                l.remove("bookmark")
+            except:
+                pass
+        numero = int(input("\n\x1b[0;97m Numero do iten: \x1b[0;37m"))
+        if(numero < len(l)):
             pass
-    numero = int(input("\n\x1b[0;97m Numero do iten: \x1b[0;37m"))
-    if(numero < len(l)):
-        pass
-    else:
-        print("\n \x1b[0;91m[!] \x1b[0;93mnão tem essa opição \x1b[0;91m[!]\x1b[0;37m")
-        exit()
+        else:
+            print("\n \x1b[0;91m[!] \x1b[0;93mnão tem essa opição \x1b[0;91m[!]\x1b[0;37m")
+            exit()
     
-    pg2(l[numero])
+    
+        pg2(l[numero])
+    except:
+        print("\n \x1b[0;91m[!] \x1b[0;93mAnime não encontrado \x1b[0;91m[!]\x1b[0;37m")
         
 def inr():
     pg = bs(requests.get(url).text,"html.parser")
