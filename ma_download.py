@@ -16,6 +16,7 @@ def pg2(ur):
             ns = (cont[1]).find_all("ul")
             a = []
             num = 0
+            print("")
             for n in ns:
                 try:
                     name = (((str((n.find("h4")).text).split(':'))[1]).replace('“',"")).replace("”","")
