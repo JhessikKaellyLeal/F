@@ -17,18 +17,22 @@ if(len(sys.argv) >= 2):
     if("-v" in sys.argv):
         ver = sys.argv[int(sys.argv.index("-v"))+1]
     else:
-        ver = "1"
+        ver = "1.0"
     if("-d" in sys.argv):
         des = sys.argv[int(sys.argv.index("-d"))+1]
     else:
         des = ""
+    if("-ico" in sys.argv):
+        icon = sys.argv[int(sys.argv.index("-ico"))+1]
+    else:
+        icon = ""
     if("-w" in sys.argv):
         if sys.platform == "win32":
             bas = "Win32GUI"
     else:
         pass
     if("-h" in sys.argv):
-        print("[+] ====> use -n para declarar o nome do aquivo.py\n[+] ====> -p para incluir as bibliotecas a serem importadas ex: tkinter,pyttsx3\n[+] ====> -i para includes\n[+] ====> -f para incluir arquivos\n[+] ====> -v para declar a versão do aplicação\n[+] ====> -d para declarar a versão\n[+] ====> -w caso queira usar interface grafica")
+        print("\n[+] ====> use -n para declarar o nome do aquivo.py\n[+] ====> -p para incluir as bibliotecas a serem importadas ex: tkinter,pyttsx3\n[+] ====> -i para includes\n[+] ====> -f para incluir arquivos\n[+] ====> -v para declar a versão do aplicação\n[+] ====> -d para declarar a versão\n[+] ====> -w caso queira usar interface grafica\n[+] ====> -ico para declarar o icone desejado")
         exit()
     else:
         pass
@@ -38,7 +42,7 @@ if(len(sys.argv) >= 2):
         print("[!] ]====> E necessario declarar o nome do arquivo com -n")
         exit()
 else:
-    print("[+] ====> use -n para declarar o nome do aquivo.py\n[+] ====> -p para incluir as bibliotecas a serem importadas ex: tkinter,pyttsx3\n[+] ====> -i para includes\n[+] ====> -f para incluir arquivos\n[+] ====> -v para declar a versão do aplicação\n[+] ====> -d para declarar a versão\n[+] ====> -w caso queira usar interface grafica")
+    print("\n[+] ====> use -n para declarar o nome do aquivo.py\n[+] ====> -p para incluir as bibliotecas a serem importadas ex: tkinter,pyttsx3\n[+] ====> -i para includes\n[+] ====> -f para incluir arquivos\n[+] ====> -v para declar a versão do aplicação\n[+] ====> -d para declarar a versão\n[+] ====> -w caso queira usar interface grafica\n[+] ====> -ico para declarar o icone desejado")
     exit()
 
 topo = """
@@ -50,7 +54,7 @@ for p in pak:
     topo = topo + f"import {p}\n"
 
 base = f"""
-executable = [Executable('{nome}', base = '{bas}')]
+executable = [Executable('{nome}', base = '{bas}', icon = '{icon}')]
 buildOptions = dict(packages = {pak},includes = {inc},include_files={files},excludes = [])
 setup(name = '{str(nome.replace(".py",""))}',version='{ver}',description='{des}',options=dict(build_exe = buildOptions),executables=executable)
 """
