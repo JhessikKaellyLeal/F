@@ -32,7 +32,7 @@ if(len(sys.argv) >= 2):
     else:
         pass
     if("-h" in sys.argv):
-        print("\n[+] ====> use -n para declarar o nome do aquivo.py\n[+] ====> -p para incluir as bibliotecas a serem importadas ex: tkinter,pyttsx3\n[+] ====> -i para includes\n[+] ====> -f para incluir arquivos\n[+] ====> -v para declar a versão do aplicação\n[+] ====> -d para declarar a versão\n[+] ====> -w caso queira usar interface grafica\n[+] ====> -ico para declarar o icone desejado")
+        print("\n[+] ====> use -n para declarar o nome do aquivo.py\n[+] ====> -p para incluir as bibliotecas a serem importadas ex: tkinter,pyttsx3\n[+] ====> -i para includes\n[+] ====> -f para incluir arquivos\n[+] ====> -v para declarar a versão do aplicação\n[+] ====> -d para declarar a versão\n[+] ====> -w caso queira usar interface grafica\n[+] ====> -ico para declarar o icone desejado")
         exit()
     else:
         pass
@@ -42,7 +42,7 @@ if(len(sys.argv) >= 2):
         print("[!] ]====> E necessario declarar o nome do arquivo com -n")
         exit()
 else:
-    print("\n[+] ====> use -n para declarar o nome do aquivo.py\n[+] ====> -p para incluir as bibliotecas a serem importadas ex: tkinter,pyttsx3\n[+] ====> -i para includes\n[+] ====> -f para incluir arquivos\n[+] ====> -v para declar a versão do aplicação\n[+] ====> -d para declarar a versão\n[+] ====> -w caso queira usar interface grafica\n[+] ====> -ico para declarar o icone desejado")
+    print("\n[+] ====> use -n para declarar o nome do aquivo.py\n[+] ====> -p para incluir as bibliotecas a serem importadas ex: tkinter,pyttsx3\n[+] ====> -i para includes\n[+] ====> -f para incluir arquivos\n[+] ====> -v para declarar a versão do aplicação\n[+] ====> -d para declarar a versão\n[+] ====> -w caso queira usar interface grafica\n[+] ====> -ico para declarar o icone desejado")
     exit()
 
 topo = """
