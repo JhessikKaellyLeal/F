@@ -1,5 +1,3 @@
-takeru
-tauz
 devs python
 hacker
 pentest
