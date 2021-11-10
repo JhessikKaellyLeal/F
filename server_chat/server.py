@@ -33,7 +33,7 @@ def receber(client):
             #Esperamos a mensagem chegar
             msg = client.recv(1024).decode(cod)
             #Pegando o nome do cliente
-            us = user[clientes.index(client)-1]
+            us = user[clientes.index(client)]
             #Formatando a mensagem
             msg = f"{us} ]===> {msg}"
             #Enviando a mensagem
@@ -56,5 +56,5 @@ while True:
     #Mandamos uma mensagem para os clientes avisando que alguém se conectou
     msg_global(msg)
     #vamos criar uma thread para esse cliente
-    cli = threading.Thread(target=receber,args=(client,)).start()
+    threading.Thread(target=receber,args=(client,)).start()
     
