@@ -1,6 +1,6 @@
 import socket, threading
 
-#Definindo que a conexão vai ser IPV4 com o socket.AF_INET / para usar IPV6 use socket.AF_INET6 .
+#Definindo que a conexão vai ser IPV4 com o socket.AF_INET / para usar IPV6 use socket.AF_INET6 | o socket.SOCK_STREAM determinas que vamos trabalhar com TCP.
 s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 #Vamos definir o tipo de codificação da comunicação.
 cod = 'ascii'
